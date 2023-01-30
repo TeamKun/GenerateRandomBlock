@@ -52,7 +52,7 @@ public final class GenerateRandomBlock extends JavaPlugin implements Listener {
             if(hitBlock.getType().isAir()) return;
             if(!changeBlock.getType().isAir()) return;
 
-            if(solidDistance(p.getLocation(),changeBlock.getLocation()) < 1) return;
+            if(solidDistance(p.getLocation(),changeBlock.getLocation()) < 2) return;
 
             if(!playerBlockMap.containsKey(p)){
                 Random r = new Random();
