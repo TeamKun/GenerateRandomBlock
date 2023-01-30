@@ -73,11 +73,13 @@ public final class GenerateRandomBlock extends JavaPlugin implements Listener {
     @EventHandler
     public void onRespawn(PlayerRespawnEvent e){
         Player player = e.getPlayer();
-        Random r = new Random();
-        Material material = blockList.get(r.nextInt(blockList.size()));
-        Block block = playerBlockMap.get(player);
-        block.setType(material);
-        playerBlockMap.put(player,block);
+        if(playerBlockMap.containsKey(player)) {
+            Random r = new Random();
+            Material material = blockList.get(r.nextInt(blockList.size()));
+            Block block = playerBlockMap.get(player);
+            block.setType(material);
+            playerBlockMap.put(player, block);
+        }
     }
 
 }
