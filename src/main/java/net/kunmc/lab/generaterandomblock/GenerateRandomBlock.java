@@ -59,12 +59,10 @@ public final class GenerateRandomBlock extends JavaPlugin implements Listener {
                 Material m = blockList.get(r.nextInt(blockList.size()));
                 changeBlock.setType(m);
                 playerBlockMap.put(p,changeBlock);
-                p.sendMessage(m.name());
             }else{
                 if(changeBlock.getLocation() == playerBlockMap.get(p).getLocation()) return;
                 Material m = playerBlockMap.get(p).getType();
                 changeBlock.setType(m);
-                p.sendMessage(m.name());
             }
 
 
